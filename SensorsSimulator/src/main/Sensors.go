@@ -10,13 +10,13 @@ import (
 type Sensor struct{
 	Temperature float64
 	Humidity uint8
-	Timestamp int64
+	Timestamp string
 }
 
 var sensor Sensor = Sensor{
 	Temperature:50,
 	Humidity:74,
-	Timestamp:time.Now().Unix(),
+	Timestamp:time.Now().Format("2006-01-02 15:04:05"),
 }
 
 //温度与湿度的对照表
@@ -154,7 +154,7 @@ func Run() {
 		sensor.Temperature = float64(30 - 15 * float64((hours-14)*60*60+minutes*60+seconds)/float64(10*60*60))
 	}
 
-	sensor.Timestamp = time.Now().Unix()
+	sensor.Timestamp = time.Now().Format("2006-01-02 15:04:05")
 	SetRH(sensor.Temperature)
 	
 	log.Printf("Current Temperature %f", sensor.Temperature)
