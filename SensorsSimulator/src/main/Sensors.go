@@ -157,6 +157,6 @@ func Run() {
 	sensor.Timestamp = time.Now().Format("2006-01-02 15:04:05")
 	SetRH(sensor.Temperature)
 	
-	log.Printf("Current Temperature %f", sensor.Temperature)
-	log.Printf("Current Humidity %d", sensor.Humidity)
+//	log.Printf("Current Temperature %f", sensor.Temperature)
+//	log.Printf("Current Humidity %d", sensor.Humidity)
 }
